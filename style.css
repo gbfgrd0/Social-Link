@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Variáveis Globais */
+
+*{
+   margin: 0;
+   padding: 0;
+   font-family: 'Poppins',sans-serif; 
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.whitescene {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: -100%;
+    background-color: white;
+    opacity: 1; 
+    animation: overlayAnimation 1s ease-in-out 3s forwards;
+    z-index: 9999; 
+}
+
+#video-background {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    z-index: -1;
+    background-size: fill;
+    object-fit: cover;
+}
+  
+#loading{
+    position: fixed;
+    top: 0;
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeOut 1s ease-in-out 4s forwards;
+    background: rgb(12,75,168);
+    background: linear-gradient(55deg, rgba(12,75,168,1) 0%, rgba(18,78,240,1) 35%, rgba(4,14,110,1) 100%);
+}
+
+#loading .text{
+    font-size: 4vh;
+    color: #fff;
+    font-weight: 600;
+    border-right: 3px solid;
+    overflow: hidden;
+    white-space: nowrap;
+    width: 100%;
+    animation:
+        typing 2s steps(14),
+        cursor .4s step-end infinite alternate;
+}
+
+@keyframes cursor {
+    50% { border-color: transparent}
+}
+
+@keyframes typing {
+    from {width: 0}
+}
+
+@keyframes overlayAnimation {
+    from {
+        height: 0;
+    }
+    to {
+        height: 100%;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+main{
+    width: 50%;
+    height: 80%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+main #logo{
+    width: 23%;
+    border-radius: 50%;
+}
+
+main h4{
+    color: white;
+    margin-top: 2vh;
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+
+main p{
+    color: #ffffffcd;
+    margin-top: 1vh;
+    font-size: 0.9rem;
+}
+
+main button{
+    display: flex;
+    flex-direction: row;
+    height: 6vh;
+    width: 100%;
+    border: none;
+    margin-top: 1.5vh;
+    border-radius: 30px;
+    justify-content: space-between;
+    align-items: center;
+    background: rgb(12,75,168);
+    background: linear-gradient(55deg, rgba(12,75,168,1) 0%, rgba(18,78,240,1) 35%, rgba(4,14,110,1) 100%);
+}
+
+main button:hover{
+    background: #fff;
+}
+
+main button:hover span{
+    color: rgb(12,75,168);
+}
+
+main button:hover i{
+    color: rgb(12,75,168);
+}
+
+main button:hover h3{
+    color: rgb(12,75,168);
+}
+
+main button h3{
+    color: white;
+    font-weight: 500;
+    margin-left: 2vw;
+    font-size: 1rem;
+}
+
+main button i{
+    margin-right: 2vw;
+    font-size: 1.3rem;
+    color: white;
+}
+
+main button span{
+    margin-right: 2vw;
+    color: #fff;
+    font-size: 1.5rem !important;
+    font-weight: 100;
+}
+
+@media (max-width: 800px) {
+    main{
+        width: 80%;
+    }
+
+    main button{
+        height: 7vh;
+        margin-top: 3vh;
+    }
+
+    main button h3{
+        font-size: 0.9rem;
+        margin-left: 4vw;
+    }
+
+    main button span{
+        margin-right: 4vw;
+        font-size: 1.2rem !important;
+    }
+
+    main button i{
+        margin-right: 4vw;
+        font-size: 1.1rem !important;
+    }
+
+    main p{
+        margin-top: 2vh;
+        margin-bottom: 1vh;
+        font-size: 0.8rem;
+    }
+}
